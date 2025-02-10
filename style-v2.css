@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Love! 💖</h1>
+        <p>Will you be my Valentine? 😊</p>
+        <div class="buttons">
+            <button id="yes-btn">Yes! 😍</button>
+            <button id="no-btn">No 😢</button>
+        </div>
+        <p id="response"></p>
+    </div>
+    <script>
+        document.getElementById("yes-btn").addEventListener("click", function() {
+            document.getElementById("response").innerHTML = "Yay! I love you! 💖";
+        });
+        
+        document.getElementById("no-btn").addEventListener("click", function() {
+            document.getElementById("response").innerHTML = "Awww, but I still love you! 💕";
+        });
+    </script>
+</body>
+</html>
