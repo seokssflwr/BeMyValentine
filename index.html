@@ -10,6 +10,8 @@
             text-align: center;
             background-color: #ffebf0;
             padding: 50px;
+            position: relative;
+            overflow: hidden;
         }
         h1 {
             color: #ff4d6d;
@@ -20,6 +22,7 @@
         }
         .buttons {
             margin-top: 20px;
+            position: relative;
         }
         button {
             font-size: 20px;
@@ -28,6 +31,7 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
+            transition: 0.3s ease-in-out;
         }
         .yes {
             background-color: #ff4d6d;
@@ -35,18 +39,19 @@
         }
         .no {
             background-color: #ccc;
-        }
-        .no:hover {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 10%;
+        }
+        .gif {
+            width: 200px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <h1>Will you be my Valentine? 💖</h1>
     <p>I've been working on this special project just for you. Will you accept my pull request into your heart? 💕</p>
+    
+    <img class="gif" src="https://media.giphy.com/media/3ohs7HdhQA4R3dmvYI/giphy.gif" alt="Cute Love GIF">
     
     <div class="buttons">
         <button class="yes" onclick="alert('Yay! I knew you’d say yes! 💖')">Yes!</button>
@@ -56,8 +61,12 @@
     <script>
         function moveButton() {
             let button = document.querySelector(".no");
-            button.style.left = Math.random() * window.innerWidth + "px";
-            button.style.top = Math.random() * window.innerHeight + "px";
+            let maxX = window.innerWidth - button.offsetWidth - 20;
+            let maxY = window.innerHeight - button.offsetHeight - 20;
+            let newX = Math.random() * maxX;
+            let newY = Math.random() * maxY;
+            button.style.left = newX + "px";
+            button.style.top = newY + "px";
         }
     </script>
 </body>
